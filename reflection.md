@@ -2,12 +2,8 @@
 
 ## What was the hardest part?
 
-(Write 3-6 sentences here about your own experience — e.g. wiring up ngrok +
-the ServiceNow Business Rule for the first time, getting Gemini to return
-reliably parseable JSON, handling the async background task correctly, etc.)
+The hardest part was connecting ServiceNow, the FastAPI webhook, ngrok, and the LLM into one reliable end-to-end flow. Setting up the ServiceNow Business Rule and making sure it could reach my local FastAPI server through ngrok required careful testing because the public endpoint can change when the tunnel is restarted. Another challenge was getting the LLM to consistently return a decision in a format that the application could parse and use safely. I also had to handle the incident processing asynchronously so that ServiceNow could receive a quick `202 Accepted` response while the LLM processing and ServiceNow write-back continued in the background. Finally, I had to adapt the LLM integration from Gemini to Groq while keeping the same decision logic and JSON contract.
 
 ## What would you improve with more time?
 
-(Write 3-6 sentences here — e.g. persistent de-dup storage instead of an
-in-memory set, retries/backoff on the Gemini or ServiceNow calls, structured
-output mode instead of prompt-based JSON, unit tests, etc.)
+With more time, I would make the system more robust by adding persistent de-duplication instead of relying only on in-memory state. I would also add retries with exponential backoff for temporary failures from the LLM and ServiceNow APIs. The LLM output validation could be strengthened using structured output or a stricter schema instead of relying mainly on prompt-based JSON formatting. I would also add more automated unit and integration tests covering invalid payloads, API failures, duplicate incidents, and unexpected LLM responses. Finally, I would improve the logging and monitoring so that failures in the background processing are easier to diagnose without manually checking the server logs.
