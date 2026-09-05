@@ -14,22 +14,19 @@ the result back onto the same ticket.
 
 ## Project structure
 
-task0/
-├── app/
-│ ├── main.py # FastAPI app, /webhook endpoint
-│ ├── gemini_client.py # calls the LLM (Groq), builds the prompt
-│ └── servicenow_client.py # writes the decision back to ServiceNow
-├── kb_articles.json # the 5 knowledge articles (from the asset pack)
-├── prompt.txt # exact prompt template sent to the LLM
-├── test_incidents.json # the 3 required test tickets (from the asset pack)
-├── business_rule.js # ServiceNow Business Rule script (from the asset pack)
-├── payload_contract.json # webhook payload spec (from the asset pack)
-├── pdi_guide.md # ServiceNow PDI setup guide (from the asset pack)
-├── screenshots/ # Business Rule + before/after screenshots
-├── requirements.txt
-├── .env.example
-└── README.md
-
+- `app/main.py` — FastAPI app, `/webhook` endpoint
+- `app/gemini_client.py` — calls the LLM (Groq), builds the prompt
+- `app/servicenow_client.py` — writes the decision back to ServiceNow
+- `kb_articles.json` — the 5 knowledge articles (from the asset pack)
+- `prompt.txt` — exact prompt template sent to the LLM
+- `test_incidents.json` — the 3 required test tickets (from the asset pack)
+- `business_rule.js` — ServiceNow Business Rule script (from the asset pack)
+- `payload_contract.json` — webhook payload spec (from the asset pack)
+- `pdi_guide.md` — ServiceNow PDI setup guide (from the asset pack)
+- `screenshots/` — Business Rule + before/after screenshots
+- `requirements.txt`
+- `.env.example`
+- `README.md`
 
 ## 1. Install
 
