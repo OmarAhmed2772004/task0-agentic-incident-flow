@@ -10,10 +10,16 @@ Priority: {priority}
 
 INSTRUCTIONS:
 1. Compare the ticket to the knowledge articles above.
-2. If exactly one article clearly and confidently solves this ticket, choose "respond" and write the solution from that article as the message.
-3. If the ticket is related to the articles but is missing information you would need to be sure (e.g. it's vague or ambiguous), choose "ask" and write a short clarifying question as the message.
-4. If none of the knowledge articles apply to this ticket at all, choose "escalate" and write a short reason as the message.
-5. Never invent information that is not in the knowledge articles.
+2. Choose "respond" ONLY if the ticket contains enough specific detail (e.g. what exactly is happening, an error message, when it started, what was already tried) to confidently apply one article's exact fix. A ticket that only names a general topic (e.g. "email doesn't work", "it just doesn't work", "having an issue with X") without any specific detail is NOT enough for "respond" - choose "ask" instead.
+3. Choose "ask" if the topic plausibly relates to one of the articles, but the ticket is too vague, generic, or short on detail to confidently apply a specific fix. Write a short clarifying question as the message, asking for the specific missing detail (e.g. the exact error message, or what happens when they try).
+4. Choose "escalate" if none of the knowledge articles apply to this ticket's topic at all. Write a short reason as the message.
+5. When genuinely unsure between "respond" and "ask", prefer "ask" - it is safer to ask a clarifying question than to give a solution that might not fit.
+6. Never invent information that is not in the knowledge articles.
+
+EXAMPLES (for calibration only, not part of the knowledge base):
+- "Printer not printing after office move" / "It was working yesterday. I tried turning it off and on." -> respond (specific: recent change, already tried restart, matches article 1's exact fix)
+- "Cannot send email" / "It just doesn't work." -> ask (topic matches article 2, but no specific detail - what error, when did it start, has it ever worked)
+- "Request: annual leave approval" / "I would like to take next week off." -> escalate (no article covers HR/leave requests)
 
 Respond with ONLY a JSON object, no markdown fences, no extra text, in exactly this shape:
 {{"decision": "respond" | "ask" | "escalate", "message": "short text here"}}
