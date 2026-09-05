@@ -13,6 +13,10 @@ Usage:
 import asyncio
 import json
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from app.gemini_client import get_decision
 
 with open("test_incidents.json", "r", encoding="utf-8") as f:
