@@ -136,3 +136,4 @@ issues quickly without creating real tickets.
 - **Gemini errors**: check `GEMINI_API_KEY` is set and that your prompt in
   `prompt.txt` still produces valid JSON — see `_extract_json` in
   `app/gemini_client.py` for how it's parsed.
+# task0-agentic-incident-flow
